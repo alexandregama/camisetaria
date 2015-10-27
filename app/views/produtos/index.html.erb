@@ -1,6 +1,7 @@
 <html>
 
 <body>
+	Produtos - Ordenação por Nome
 	<table>
 		<thead>
 			<tr>
@@ -11,7 +12,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<% produtos = Produto.all %>
+			<% produtos = Produto.all.order :name %>
 			<% produtos.each do |produto| %>
 			<tr>
 				<td><%= produto.name %></td>	
@@ -22,6 +23,31 @@
 			<% end %>
 		</tbody>
 	</table>
+
+	<br/>
+
+	Produtos - Ordenação por Preço
+	<table>
+		<thead>
+			<tr>
+				<th>Nome</th>	
+				<th>Descrição</th>	
+				<th>Preço</th>	
+				<th>Quantidade</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% produtos = Produto.all.order :preco %>
+			<% produtos.each do |produto| %>
+			<tr>
+				<td><%= produto.name %></td>	
+				<td><%= produto.descricao %></td>
+				<td><%= produto.preco %></td>
+				<td><%= produto.quantidade %></td>
+			</tr>			
+			<% end %>
+		</tbody>
+	</table>	
 </body>
 
 </html>
