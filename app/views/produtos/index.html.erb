@@ -12,8 +12,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<% produtos = Produto.all.order :name %>
-			<% produtos.each do |produto| %>
+			<% @produtos_por_nome.each do |produto| %>
 			<tr>
 				<td><%= produto.name %></td>	
 				<td><%= produto.descricao %></td>
@@ -37,8 +36,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<% produtos = Produto.all.order :preco %>
-			<% produtos.each do |produto| %>
+			<% @produtos_por_preco.each do |produto| %>
 			<tr>
 				<td><%= produto.name %></td>	
 				<td><%= produto.descricao %></td>
